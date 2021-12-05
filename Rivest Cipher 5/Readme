@@ -1,0 +1,28 @@
+RC5 is a symmetric block cipher
+It uses same secret cryptographic key for encryption and for decryption
+suitable for hardware or software
+fast, easy (using only primitive computer operations- XOR Shift)
+low memory requirement (on devices with restricted memory)
+RC5 is word-oriented: the basic computational operations should be operators that work on full wordsof data at a time of different word-lengths
+The user can choose the level of security appropriate by changing the instances mentioned previously that are w r n
+RC5 uses same secret cryptographic key for encryption and for decryption
+Various instances of RC5 can be defined Depending on input plain text block size, number of rounds and key size
+each instance is denoted as RC5-w/r/b where w=word size in bits, r=number of rounds and b=key size in bytes.
+
+Step-1: Initialization of constants P and Q - 2 magic constants defined depending on w
+
+Step 2: Converting secret key K from bytes to words - size b bytes is used to initialize array L
+
+Step 3: Initializing sub-key S - initialized using magic constants P and Q [size t=2(r+1)]
+
+Step 4: Sub-key mixing - Mix in user’s secret key with S and L
+
+Step 5: Encryption - input plain text block into two registers A and B each of size w bits. result of A B together forms cipher text block
+
+Step 6: Decryption
+
+
+The RC5_SETUP() function mixes the private key and the public key.
+RC5_ENCRYPT() function encrypts the plaintext and corresponding ciphertext is formed.
+RC5_DECRYPT() function decrypts the ciphertext and the output plaintext is achieved.
+The main() function stores the input plain text and calls the above 3 functions.
